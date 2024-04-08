@@ -1,0 +1,19 @@
+{
+    "name": "tinywan/jwt",
+    "description": "php jwt",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Tinywan\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tinywan",
+            "email": "756684177@qq.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^7.8"
+    }
+}
