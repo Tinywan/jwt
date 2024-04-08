@@ -1,11 +1,6 @@
-# JWT
-
-在PHP中创建和管理JWT令牌
-
-```php
 <?php
 
-require 'vendor/autoload.php';
+require '../vendor/autoload.php';
 
 // Your secret key (keep this secure)
 $secretKey = 'Tinywan2024040000011';
@@ -32,4 +27,3 @@ if ($jwt->validateToken($token)) {
 } else {
     echo 'JWT is invalid.' . PHP_EOL;
 }
-```
