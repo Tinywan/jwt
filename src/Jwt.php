@@ -1,8 +1,8 @@
 <?php
 /**
- * @desc JWT
+ * @desc PHP JWT
  * @author Tinywan(ShaoBo Wan)
- * @date 2024/11/11 15:16
+ * @date 2024/04/10 15:16
  */
 
 declare(strict_types=1);
@@ -11,11 +11,10 @@ namespace Tinywan;
 
 class Jwt
 {
-    /**string $secretKey*/
+    /**string */
     private string $secretKey;
 
     /**
-     * @desc 构架函数
      * @param string $secretKey
      * @author Tinywan(ShaoBo Wan)
      */
@@ -25,7 +24,7 @@ class Jwt
     }
 
     /**
-     * @desc 创建JWT
+     * @desc create token
      * @param array $payload
      * @return string
      * @author Tinywan(ShaoBo Wan)
@@ -39,11 +38,11 @@ class Jwt
         return $base64UrlHeader . '.' . $base64UrlPayload . '.' . $base64UrlSignature;
     }
 
-
     /**
-     * @desc 验证JWT
+     * @desc validate token
      * @param string $token
      * @return bool
+     * @author Tinywan(ShaoBo Wan)
      */
     public function validateToken(string $token): bool
     {
@@ -54,15 +53,15 @@ class Jwt
         return hash_equals($signature, $expectedSignature);
     }
 
-
     /**
-     * @desc 解码JWT
+     * @desc decode token
      * @param string $token
      * @return array
+     * @author Tinywan(ShaoBo Wan)
      */
     public function decodeToken(string $token): array
     {
-        list(, $base64UrlPayload, ) = explode('.', $token);
+        list(, $base64UrlPayload,) = explode('.', $token);
         $payload = $this->base64UrlDecode($base64UrlPayload);
         return json_decode($payload, true);
     }
