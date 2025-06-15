@@ -1,5 +1,5 @@
 {
-    "name": "tinywan/jwt",
+    "name": "tinywan/php-jwt",
     "description": "php jwt",
     "type": "library",
     "autoload": {
